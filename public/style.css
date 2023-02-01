@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+body {
+  display: flex;
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.cardsLayout {
+  background: url("../../images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+
+.frontContainer {
+  position: relative;
+  transform: translateX(30%) translateY(20vh);
+}
+.frontContainer ._cardLogo, .frontContainer ._numberSpan, .frontContainer ._nameSpan, .frontContainer ._dateSpan {
+  position: absolute;
+}
+.frontContainer ._cardLogo {
+  left: 5%;
+  top: 10%;
+}
+.frontContainer ._nameSpan {
+  left: 5%;
+  top: 80%;
+}
+.frontContainer ._numberSpan {
+  left: 5%;
+  top: 55%;
+  font-size: 2em;
+}
+.frontContainer ._dateSpan {
+  top: 80%;
+  right: 10%;
+}
+
+.back-img {
+  position: relative;
+  transform: translateX(50%) translateY(25vh);
+}
+.back-img .cvcSpan {
+  position: absolute;
+  left: 30%;
+  top: 45%;
+  left: 82%;
+}
+
+.form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 400px;
+}
+.form input {
+  padding: 2px 10px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid hsl(270deg, 3%, 87%);
+  color: hsl(278deg, 68%, 11%);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+}
+.form input::placeholder {
+  font-family: "Space Grotesk", sans-serif;
+}
+.form input:hover {
+  cursor: pointer;
+}
+.form input:focus {
+  outline: none;
+  border: double 1px transparent;
+  background-image: linear-gradient(white, white), linear-gradient(to right, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.form .btn {
+  background-color: hsl(278deg, 68%, 11%);
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  height: 40px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.5em;
+}
+.form .btn:hover {
+  cursor: pointer;
+}
+.form .errorOutput {
+  margin: 0;
+  letter-spacing: 0;
+  color: rgba(255, 0, 0, 0.712);
+}
+
+.formContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.formContainer .inputDate {
+  width: 50px;
+}
+
+.control-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */

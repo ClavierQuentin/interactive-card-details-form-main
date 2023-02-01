@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="./public/style.css">
+  <script src="./public/script.js" defer></script>
+</head>
+<body>
+
+  <div class="cardsLayout">
+      <div class="frontContainer">
+        <img class="_cardImage" src="./images/bg-card-front.png" alt="">
+        <img class="_cardLogo" src="./images/card-logo.svg" alt="">
+        <span class="_numberSpan" id="numberSpan">0000 0000 0000 0000</span>
+        <span class="_nameSpan" id="nameSpan">JOHN DOE</span>
+        <div class="_dateSpan">
+          <span  id="monthSpan">00</span>/<span id="yearSpan">00</span>  
+        </div>
+      </div>
+      <div class="back-img">
+        <img  src="./images/bg-card-back.png" alt="">  
+        <span class="cvcSpan" id="cvcSpan">000</span>
+
+      </div>
+  </div>
+
+  <form  class="form">
+    <div class="control-form">
+      <label for="name">CARDHOLDER NAME</label>
+      <input  type="text"  name="name" id="name" placeholder="e.g. John Doe">
+      <p class="errorOutput" id="nameError"></p>
+    </div>
+    <div class="control-form">
+      <label for="number">CARD NUMBER</label>
+      <input type="text" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000">
+      <p class="errorOutput" id="numberError"></p>
+
+    </div>
+    <div class="formContainer">
+      <div class="control-form">
+        <label for="month">EXP. DATE (MM/YY)</label>
+        <div>
+          <input class="inputDate" type="text" name="month" id="month" placeholder="MM" min="01" max="12" step="1" required>
+          <input class="inputDate" type="text" name="year" id="year" placeholder="YY" min="00" max="99" step="1" >
+          <p class="errorOutput" id="dateError"></p>  
+        </div>
+      </div>
+      <div class="control-form">
+        <label for="cvc">CVC</label>
+        <input type="text" name="cvc" id="cvc">
+        <p class="errorOutput" id="cvcError"></p>
+      </div>
+    </div>
+    <button class="btn" type="button" id="btn">Confirm</button>
+  </form>
+
+</body>
+</html>

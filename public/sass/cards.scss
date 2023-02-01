@@ -1,0 +1,43 @@
+.cardsLayout{
+    background: url("../../images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+
+.frontContainer{
+    position: relative;
+    transform: translateX(30%) translateY(20vh);
+    ._cardLogo, ._numberSpan, ._nameSpan, ._dateSpan{
+        position: absolute;
+    }
+    ._cardLogo{
+        left: 5%;
+        top: 10%;
+    }
+    ._nameSpan{
+        left: 5%;
+        top: 80%;
+    }
+    ._numberSpan{
+        left: 5%;
+        top: 55%;
+        font-size: 2em;
+    }
+    ._dateSpan{
+        top: 80%;
+        right: 10%;
+    }
+}
+.back-img{
+    position: relative;
+    transform: translateX(50%) translateY(25vh);
+    .cvcSpan{
+        position: absolute;
+        left: 30%;
+        top: 45%;
+        left: 82%;
+    }
+    
+}
