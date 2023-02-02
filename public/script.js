@@ -12,7 +12,12 @@ function ValidateCreditCardNumber(cardNumber) {
   
     if(!isValid) {
        document.getElementById("numberError").textContent = "Wrong format, number only";
-       document.getElementById("number").style.borderColor = errorBorderColor;
+       document.getElementById("number").classList.add("errorBorder");
+    }
+    else{
+      document.getElementById("numberError").textContent = "";
+      document.getElementById("number").classList.remove("errorBorder");
+
     }
 }
 
@@ -34,7 +39,16 @@ function displayValuesFromInput(inputName, value){
 
 inputList.forEach(element => {
     element.addEventListener("input", () => {
-      displayValuesFromInput(element.name, element.value)
+      displayValuesFromInput(element.name, element.value);
+      if(element.classList.contains("errorBorder")){
+        element.classList.remove("errorBorder");
+        if(element.name == "month" || element.name == "year"){
+          document.getElementById("dateError").textContent = "";
+        }
+        else{
+          document.getElementById(element.name + "Error").textContent = "";
+        }
+      }
     });
 });
 
@@ -42,12 +56,13 @@ document.getElementById("btn").addEventListener('click', () => {
 
     let form = document.querySelector("form");
     let formData = new FormData(form);
-    let isFormValidated = true;
-
+    let isFormValidated = true;   
+    let monthIsEmpty = false;
     for(const [key, value] of formData){
         let valueIsNull = value == "" ? true : false;
         if(valueIsNull){
             if(key == "month" || key == "year"){
+              monthIsEmpty = true;
                 document.getElementById("dateError").textContent = "Can't be blank";
             } else{
                 document.getElementById(key + "Error").textContent = "Can't be blank";
@@ -57,14 +72,21 @@ document.getElementById("btn").addEventListener('click', () => {
         } else{
           document.getElementById(key).classList.remove("errorBorder") ;
           if(key == "month" || key == "year"){
-            document.getElementById("dateError").textContent = "";
+            if(monthIsEmpty){
+              document.getElementById("dateError").textContent = "Can't be blank";
+            }else{
+              document.getElementById("dateError").textContent = "";
+            }
           } else{
             document.getElementById(key + "Error").textContent = "";
           }
         }
     }
 
-    ValidateCreditCardNumber(formData.get("number"));
+    if(isFormValidated){
+      ValidateCreditCardNumber(formData.get("number"));
+    }
+
     if(isFormValidated){
       for(const [key, value] of formData){
         displayValuesFromInput(key, value);

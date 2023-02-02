@@ -5,7 +5,11 @@ body{
     margin: 0;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 12px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    @media (max-width:1300px){
+        flex-direction: column;
+        gap: 100px;
+    }
 }
 
 @import 'cards', 'form';
@@ -29,11 +33,19 @@ body{
         font-family: 'Space Grotesk', sans-serif;
         font-size: 1.5em;        
     }
+    .btn:hover{
+        cursor: pointer;
+    }
     p{
         margin: 0;
         color: hsl(279, 6%, 55%);
         letter-spacing: 0;
         font-size: 14px;
+    }
+    img{
+        @media (max-width:1300px){
+            width: 80px;
+        }
     }
 }
 
